@@ -71,14 +71,14 @@ const random_color = () => {
 
  /* When 'Show Another Quote' is clicked, this function will print a random quote onto the index.html file. */
  const printQuote = () => {
-        storage = 0;
-        theQuote = getRandomQuote();
-        html = '';
+    storage = 0;
+    theQuote = getRandomQuote();
+    html = '';
   html += `<p class="quote"> ${theQuote} </p>`;
-      if (quotes[storage].source)  html += `<p class="source"> ${quotes[storage].source}`;
-      if (quotes[storage].citation) html += `<span class="citation"> ${quotes[storage].citation}</span>`;
-      if (quotes[storage].year) html += `<span class="year"> ${quotes[storage].year} </span>`;
-      if (quotes[storage].tags) html += `<br> <span class="tags"> ${quotes[storage].tags}</span>`;
+    if (quotes[storage].source)  html += `<p class="source"> ${quotes[storage].source}`;
+    if (quotes[storage].citation) html += `<span class="citation"> ${quotes[storage].citation}</span>`;
+    if (quotes[storage].year) html += `<span class="year"> ${quotes[storage].year} </span>`;
+    if (quotes[storage].tags) html += `<br> <span class="tags"> ${quotes[storage].tags}</span>`;
   html += `</p>`;
   document.getElementById("quote-box").innerHTML = html;
   random_color();
