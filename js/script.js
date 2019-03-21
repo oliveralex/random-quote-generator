@@ -1,7 +1,6 @@
 // -----> Treehouse FSJS Techdegree: project 1 - A Random Quote Generator <-----
 
 // Global variables
-var storage;
 var theQuote;
 var html;
 
@@ -56,8 +55,7 @@ let quotes = [
 /* getRandomQuote function returns a random quote from the "Quotes" array.*/
 const getRandomQuote = () => {
         let randomNumber = Math.floor(Math.random() * quotes.length);
-        storage += randomNumber;
-        return `${quotes[randomNumber].quote}`;
+        return quotes[randomNumber];
 };
 
 /* Random Color Generator */
@@ -74,11 +72,11 @@ const random_color = () => {
     storage = 0;
     theQuote = getRandomQuote();
     html = '';
-  html += `<p class="quote"> ${theQuote} </p>`;
-    if (quotes[storage].source)  html += `<p class="source"> ${quotes[storage].source}`;
-    if (quotes[storage].citation) html += `<span class="citation"> ${quotes[storage].citation}</span>`;
-    if (quotes[storage].year) html += `<span class="year"> ${quotes[storage].year} </span>`;
-    if (quotes[storage].tags) html += `<br> <span class="tags"> ${quotes[storage].tags}</span>`;
+  html += `<p class="quote"> ${theQuote.quote} </p>`;
+    if (theQuote.source)  html += `<p class="source"> ${theQuote.source}`;
+    if (theQuote.citation) html += `<span class="citation"> ${theQuote.citation}</span>`;
+    if (theQuote.year) html += `<span class="year"> ${theQuote.year} </span>`;
+    if (theQuote.tags) html += `<br> <span class="tags"> ${theQuote.tags}</span>`;
   html += `</p>`;
   document.getElementById("quote-box").innerHTML = html;
   random_color();
